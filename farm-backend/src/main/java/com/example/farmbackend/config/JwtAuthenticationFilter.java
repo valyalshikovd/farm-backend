@@ -49,7 +49,7 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
             UserDetails userDetails = this.userDetailsService.loadUserByUsername(userEmail);
 
 
-            System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n" + userDetails.getAuthorities() + "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
+
 
             if(jwtService.isTokenValid(jwt, userDetails)){
 

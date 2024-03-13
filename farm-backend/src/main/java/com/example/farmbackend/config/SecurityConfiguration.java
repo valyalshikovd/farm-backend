@@ -36,21 +36,14 @@ public class SecurityConfiguration {
 
         http
                 .csrf().disable()
-
                 .sessionManagement()
                 .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
                 .and()
-
-                .authorizeHttpRequests(
-                        req ->
-                        {
-                            System.out.println(req.toString());
-                            req.requestMatchers("api/v1/auth/**").permitAll()
-                                    .requestMatchers("/api/v1/employees/**").hasAnyRole(ADMIN.name())
-                                    .anyRequest().authenticated();
-                        }
-                )
-
+                .authorizeHttpRequests()
+                .requestMatchers("api/v1/auth/**").permitAll()
+                .anyRequest()
+                .authenticated()
+                .and()
                 .authenticationProvider(authenticationProvider)
                 .addFilterBefore(jwtAuthFilter, UsernamePasswordAuthenticationFilter.class);
 

@@ -9,6 +9,7 @@ import com.example.farmbackend.service.EmployeeService;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 
@@ -35,6 +36,12 @@ public class EmployeeServiceImpl implements EmployeeService {
         return EmployeeMapper.mapToEmployeeDto(employee);
     }
 
+    @Override
+    public EmployeeDto getEmployeeByName(String name) {
+
+        Employee employee = employeeRepository.findByEmail(name);
+        return EmployeeMapper.mapToEmployeeDto(employee);
+    }
     @Override
     public List<EmployeeDto> getAllEmployees() {
         List<Employee> listEmployers = employeeRepository.findAll();

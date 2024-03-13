@@ -29,8 +29,16 @@ public class ProductServiceImpl implements ProductService {
 
     @Override
     public ProductDto getProductByName(String name) {
-        System.out.println("---------");
         Product product = productRepository.findByName(name);
+        return ProductMapper.mapToDto(product);
+    }
+
+    @Override
+    public ProductDto getProductById(Long id) {
+
+        Product product = productRepository.findById(id).orElseThrow(
+                () -> new NotFoundException("Employee is not exists with given id : " + id)
+        );
         return ProductMapper.mapToDto(product);
     }
 
