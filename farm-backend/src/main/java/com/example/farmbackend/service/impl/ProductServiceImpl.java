@@ -2,9 +2,7 @@ package com.example.farmbackend.service.impl;
 
 import com.example.farmbackend.dto.ProductDto;
 import com.example.farmbackend.exception.NotFoundException;
-import com.example.farmbackend.mapper.EmployeeMapper;
 import com.example.farmbackend.mapper.ProductMapper;
-import com.example.farmbackend.models.Employee;
 import com.example.farmbackend.models.Product;
 import com.example.farmbackend.repository.ProductRepository;
 import com.example.farmbackend.service.ProductService;

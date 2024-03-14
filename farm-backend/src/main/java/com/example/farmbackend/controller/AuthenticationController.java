@@ -6,7 +6,6 @@ import com.example.farmbackend.auth.AuthenticationResponse;
 import com.example.farmbackend.auth.AuthenticationService;
 import com.example.farmbackend.auth.RegisterRequest;
 import com.example.farmbackend.models.Role;
-import jakarta.annotation.security.RolesAllowed;
 import lombok.RequiredArgsConstructor;
 
 import org.springframework.http.HttpStatus;
