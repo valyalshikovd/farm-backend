@@ -1,15 +1,19 @@
 package com.example.farmbackend.models;
 
-
 import jakarta.persistence.*;
 import lombok.*;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
-
 import java.util.Collection;
 import java.util.List;
 
+
+/**
+ * Класс модели , представляющий собой Сотрудника.
+ *
+ * @author Дмитрий Валяльщиков
+ */
 @Getter
 @Setter
 @NoArgsConstructor

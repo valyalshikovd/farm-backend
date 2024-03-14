@@ -6,7 +6,9 @@ import com.example.farmbackend.models.Collection;
 import java.util.Date;
 
 public class CollectionMapper {
-
+    /**
+     * Класс для преобразования объекта-модели в Data-transfer-Object
+     */
     public static Collection mapToCollect(CollectionDto collectionDto){
 
         Collection collection = Collection

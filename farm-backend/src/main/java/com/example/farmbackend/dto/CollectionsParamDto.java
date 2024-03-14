@@ -11,5 +11,5 @@ import lombok.Setter;
 public class CollectionsParamDto {
     private final String employeeEmail;
     private final String type;
-    private final double amount;
+    private final boolean total;
 }

@@ -7,7 +7,11 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.springframework.stereotype.Service;
-
+/**
+ * Класс модели , представляющий собой Продукт.
+ *
+ * @author Дмитрий Валяльщиков
+ */
 @Getter
 @Setter
 @NoArgsConstructor

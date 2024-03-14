@@ -1,12 +1,15 @@
 package com.example.farmbackend.models;
 
-
 import jakarta.persistence.*;
 import lombok.*;
 import org.springframework.data.annotation.CreatedDate;
-
 import java.util.Date;
 
+/**
+ * Класс модели , представляющий сбор продукции.
+ *
+ * @author Дмитрий Валяльщиков
+ */
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder

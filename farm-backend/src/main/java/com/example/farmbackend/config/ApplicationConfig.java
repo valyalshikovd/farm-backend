@@ -14,24 +14,43 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
+/**
+ * Конфигурационный класс Spring Security для приложения.
+ */
 @Configuration
 @RequiredArgsConstructor
 public class ApplicationConfig {
 
     private  final EmployeeRepository repository;
 
+    /**
+     * Создает сервис для загрузки данных пользователя по его имени.
+     *
+     * @return Реализация интерфейса UserDetailsService.
+     */
     @Bean
     public UserDetailsService userDetailsService(){
         return username -> repository.findByEmail(username);
     }
 
-
+    /**
+     * Создает менеджер аутентификации на основе конфигурации Spring Security.
+     *
+     * @param config Конфигурация Spring Security.
+     * @return Менеджер аутентификации.
+     * @throws Exception - в случае ошибки при создании менеджера аутентификации.
+     */
     @Bean
     public AuthenticationManager authenticationManager(AuthenticationConfiguration config) throws Exception {
         return config.getAuthenticationManager();
     }
 
-
+    /**
+     * Создает поставщика аутентификации на основе сервиса загрузки данных пользователя
+     * и кодировщика паролей.
+     *
+     * @return Поставщик аутентификации.
+     */
     @Bean
     public AuthenticationProvider authenticationProvider() {
         DaoAuthenticationProvider authenticationProvider  = new DaoAuthenticationProvider();
@@ -40,7 +59,11 @@ public class ApplicationConfig {
         return authenticationProvider;
     }
 
-
+    /**
+     * Создает кодировщик паролей с использованием алгоритма BCrypt.
+     *
+     * @return Кодировщик паролей.
+     */
     @Bean
     public PasswordEncoder passwordEncoder(){
         return new BCryptPasswordEncoder();

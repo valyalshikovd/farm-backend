@@ -1,13 +1,12 @@
 package com.example.farmbackend.repository;
 
-
 import com.example.farmbackend.models.Collection;
-import org.hibernate.mapping.List;
 import org.springframework.data.jpa.repository.JpaRepository;
-
-import java.util.Optional;
+import java.util.List;
 
 public interface CollectionRepository extends JpaRepository<Collection, Long> {
 
-    Optional<Collection> findAllByEmployeeIdAndProductId(Long employeeId, Long productId);
+    List<Collection> findAllByEmployeeIdAndProductId(Long employeeId, Long productId);
+    List<Collection> findAllByProductId( Long productId);
+    List<Collection> findAllByEmployeeId(Long employeeId);
 }

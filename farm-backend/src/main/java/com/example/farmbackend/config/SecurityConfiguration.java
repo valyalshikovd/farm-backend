@@ -15,6 +15,9 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 import static com.example.farmbackend.models.Role.ADMIN;
 
 
+/**
+ * Класс конфигурации безопасности для Spring Security.
+ */
 @Configuration
 @EnableWebSecurity
 @RequiredArgsConstructor
@@ -23,17 +26,15 @@ public class SecurityConfiguration {
     private final JwtAuthenticationFilter jwtAuthFilter;
     private final AuthenticationProvider authenticationProvider;
 
+    /**
+     * Настраивает цепочку фильтров Spring Security.
+     *
+     * @param http Объект HttpSecurity для настройки безопасности.
+     * @return Цепочка фильтров безопасности.
+     * @throws Exception - в случае ошибки при настройке фильтров.
+     */
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
-
-
-        System.out.println(ADMIN.name());
-
-
-
-
-
-
         http
                 .csrf().disable()
                 .sessionManagement()
