@@ -24,7 +24,7 @@ username: Имя пользователя\
 password: Пароль\
 email: Email\
 firstName: Имя\
-lastName: Фамилия\
+lastName: Фамилия
 
 Ответ:\
 201 Created: При успешной регистрации\
@@ -38,7 +38,7 @@ URI: /api/v1/auth/authenticate\
 Запрос:\
 Body: JSON объект с данными аутентификации (AuthenticationRequest)\
 username: Имя пользователя\
-password: Пароль\
+password: Пароль
 
 Ответ:\
 200 OK: При успешной аутентификации, содержит JSON объект с данными пользователя (AuthenticationResponse)\
