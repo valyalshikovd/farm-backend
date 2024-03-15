@@ -157,6 +157,7 @@ public class CollectionServiceImpl implements CollectionService {
     private List<CollectionDto> generateCollectionsWithValideDate(List<CollectionDto> collectionDtoList, long time){
         List<CollectionDto> res = new LinkedList<>();
         for (CollectionDto collectionDto : collectionDtoList){
+            collectionDto.getEmployeeDto().setPassword(null);
             if(new Date().getTime() - collectionDto.getDateCreating().getTime() < time){
                 res.add(collectionDto);
             }

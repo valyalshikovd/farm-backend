@@ -1,9 +1,11 @@
 package com.example.farmbackend.controller;
 
 import com.example.farmbackend.dto.*;
+import com.example.farmbackend.models.Employee;
 import com.example.farmbackend.service.CollectionService;
 import com.example.farmbackend.service.EmployeeService;
 import com.example.farmbackend.service.ProductService;
+import jakarta.annotation.security.RolesAllowed;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -147,7 +149,7 @@ public class CollectionController {
             return ResponseEntity.status(HttpStatus.FORBIDDEN).build();
         }
         ProductDto productDto = productService.getProductByName(params.getType());
-        EmployeeDto employeeDto = employeeService.getEmployeeByName(params.getEmployeeEmail());
+        EmployeeDto employeeDto = employeeService.getEmployeeByName(((Employee) authentication.getPrincipal()).getEmail());
 
         CollectionDto collectionDto = CollectionDto
                 .builder()

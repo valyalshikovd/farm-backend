@@ -8,7 +8,6 @@ import lombok.Setter;
 @Setter
 @Getter
 public class RequestCollection {
-    private String employeeEmail;
     private String type;
     private double amount;
 }
